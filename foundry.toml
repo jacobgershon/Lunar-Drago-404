@@ -1,0 +1,87 @@
+# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+
+#----------------------
+### Profile configs ###
+
+[profile.default]
+src = 'src/contracts'
+test = 'test'
+out = 'artifacts'
+libs = [
+    'lib',
+    'node_modules',
+]
+gas_reports = ["*"]
+optimizer = true
+optimizer_runs = 999_999
+fs_permissions = [{ access = "read", path = "./"}]
+sender = "0x00a329c0648769a73afac7f9381e08fb43dbea72"
+verbosity = 3
+match_path="test/l1/*"  
+# Benchmark configurations: Benchmark configurations: No benchmark tests are run by default.
+no_match_contract = "Benchmark*"
+
+[profile.default.optimizer_details]
+constantOptimizer = true
+yul = false
+
+[profile.optimistic]
+src = 'src/contracts-optimistic'
+match_path="test/l2_optimistic/*"
+
+[profile.zksync]
+src = 'src/contracts-zksync'
+match_path="test/l2_zksync/*"
+
+[profile.gas_benchmark]
+# To run the brenchmark tests, using `gas_benchmark` profile.
+# Example: `FOUNDRY_PROFILE=gas_benchmark NETWORK=mainnet forge test --mc=Benchmark_CallbackHelper`
+test = 'benchmarks'
+no_match_contract = "-"
+match-test="GasBenchmark"
+no_storage_caching=false
+fs_permissions = [{ access = "read-write", path = "./"}]
+
+#------------------------------
+### Fuzzing Testing configs ###
+
+[fuzz]
+max_test_rejects = 4_294_967_295   # 2^32 - 1
+runs = 2048
+
+#------------------------
+### Node RPCs configs ###
+
+[rpc_endpoints]
+mainnet = "${ETH_NODE_URL}"
+bsc_mainnet = "${BSC_NODE_URL}"
+polygon_mainnet = "${POLYGON_NODE_URL}"
+avalanche_mainnet = "${AVAX_NODE_URL}"
+avalanche_fuji = "${AVAX_FUJI_NODE_URL}"
+fantom_mainnet = "${FTM_NODE_URL}"
+cronos_mainnet = "${CRONOS_NODE_URL}"
+aurora_mainnet = "${AURORA_NODE_URL}"
+arbitrum_mainnet = "${ARBITRUM_NODE_URL}"
+optimism_mainnet = "${OP_NODE_URL}"
+velas_mainnet = "${VELAS_NODE_URL}"
+oasis_mainnet = "${OASIS_NODE_URL}"
+bttc_mainnet = "${BTTC_NODE_URL}"
+ethereum_goerli = "${ETH_GOERLI_NODE_URL}"
+linea_mainnet = "${LINEA_NODE_URL}"
+polygon_zkevm_mainnet = "${POLYGON_ZKEVM_NODE_URL}"
+base_mainnet = "${BASE_NODE_URL}"
+scroll_mainnet = "${SCROLL_NODE_URL}"
+
+[etherscan]
+mainnet = {key = "${MAINNET_SCAN_API_KEY}", chain = 1}
+bsc_mainnet = {key = "${BSC_SCAN_API_KEY}", chain = 56}
+polygon_mainnet = {key = "${POLYGON_SCAN_API_KEY}", chain = 137}
+avalanche_mainnet = {key = "${AVAX_SCAN_API_KEY}", chain = 43114}
+avalanche_fuji = {key = "${AVAX_SCAN_API_KEY}", chain = 43113}
+fantom_mainnet = {key = "${FTM_SCAN_API_KEY}", chain = 250}
+cronos_mainnet = {key = "${CRONOS_SCAN_API_KEY}", chain = 25, url = "https://api.cronoscan.com/api"}
+aurora_mainnet = {key = "${AURORA_SCAN_API_KEY}", chain = 1313161554}
+arbitrum_mainnet = {key = "${ARBITRUM_SCAN_API_KEY}", chain = 42161}
+optimism_mainnet = {key = "${OP_SCAN_API_KEY}", chain = 10}
+bttc_mainnet = {key = "${BTTC_SCAN_API_KEY}", chain = 199, url = "https://api.bttcscan.com/api"}
+ethereum_goerli = {key = "${MAINNET_SCAN_API_KEY}", chain = 5}
