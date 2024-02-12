@@ -250,3 +250,4 @@ cache-zk/
 broadcast/
 .vscode/
 *.tmp*
+script
