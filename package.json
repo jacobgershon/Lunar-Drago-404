@@ -1,9 +1,9 @@
 {
-    "name": "dmm-aggregator-router",
+    "name": "lunar-drago-404",
     "version": "1.0.0",
     "main": "index.js",
     "license": "MIT",
-    "description": "DMM aggregator router contracts and ABI",
+    "description": "Lunar Drago 404",
     "scripts": {
         "compile": "hardhat compile",
         "c": "hardhat compile",
@@ -19,14 +19,6 @@
         "test:verbose": "VERBOSE=true hardhat test",
         "coverage": "npm run build && npx buidler coverage --temp artifacts --network coverage"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/dmm/dmm-aggregator-router"
-    },
-    "bugs": {
-        "url": "https://github.com/dmm/dmm-aggregator-router/issues"
-    },
-    "homepage": "https://github.com/dmm/dmm-aggregator-router#readme",
     "devDependencies": {
         "@ethereum-waffle/chai": "^3.2.1",
         "@nomiclabs/hardhat-ethers": "^2.2.2",
