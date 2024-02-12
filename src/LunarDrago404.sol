@@ -44,7 +44,7 @@ contract LunarDrago404 is ERC404 {
       } else if (seed <= 217) {
         // ~15%
         image = 'https://i.ibb.co/fxFMhYL/dragon7.png';
-        color = 'Sing Dragon';
+        color = 'Singer Dragon';
       } else if (seed <= 242) {
         // ~10%
         image = 'https://i.ibb.co/Pg9zc5d/dragon9.png';
@@ -52,7 +52,7 @@ contract LunarDrago404 is ERC404 {
       } else if (seed <= 255) {
         // ~5%
         image = 'https://i.ibb.co/84YTbJ9/dragon8.png';
-        color = 'Happy Dragon';
+        color = '2024 Dragon';
       }
 
       string memory jsonPreImage = string.concat(
